@@ -1,0 +1,42 @@
+[project]
+name = "dana-cup"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django-cors-headers>=4.7.0",
+    "django>=5.2.1",
+    "django-ninja>=1.4.1",
+    "factory-boy>=3.3.3",
+    "pillow>=11.2.1",
+    "pydantic[email,email-validator]>=2.11.4",
+    "pytest>=8.3.5",
+    "requests>=2.32.3",
+    "rich>=14.0.0",
+    "django-debug-toolbar>=5.2.0",
+    "django-jalali>=7.4.0",
+    "django-ninja-extra>=0.30.0",
+    "django-orderable>=6.1.2",
+    "django-solo>=2.4.0",
+    "django-taggit>=6.1.0",
+    "django-unfold>=0.57.0",
+    "django-sonar>=0.1.8",
+    "django-environ>=0.12.0",
+    "django-extensions>=4.1",
+    "django-ckeditor>=6.7.2",
+    "annotated-types>=0.7.0",
+    "boto3>=1.38.12",
+    "boto3-type-annotations-with-docs>=0.3.1",
+    "django-storages>=1.14.6",
+    "tqdm>=4.67.1",
+    "redis>=6.0.0",
+    "pytest-django>=4.11.1",
+    "psycopg-binary>=3.2.7",
+    "mkdocs-material>=9.6.12",
+    "markdown-include>=0.8.1",
+    "mkdocstrings[python]>=0.29.1",
+    "ptpython>=3.0.30",
+    "django-ninja-jwt>=5.3.7",
+    "django-jalali-date>=2.0.0",
+]
