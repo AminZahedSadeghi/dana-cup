@@ -7,7 +7,7 @@ from .api import api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', api.urls),
+    path('api/v1/', api.urls),
     path('sonar/', include('django_sonar.urls')),
 ]
 

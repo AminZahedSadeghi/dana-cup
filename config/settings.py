@@ -15,12 +15,16 @@ from datetime import timedelta
 from pathlib import Path
 
 import environ
+from faker import Faker
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
+
+FAKE = Faker('fa_IR')
+FAKE_EN = Faker('en_US')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -71,6 +75,7 @@ MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -158,8 +163,8 @@ NINJA_EXTRA = {
     'PAGINATION_PER_PAGE': 10,
 }
 NINJA_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
 
 SHELL_PLUS = 'ptpython'
@@ -175,3 +180,7 @@ AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = [
     'accounts.backends.UsernameOrEmailBackend',
 ]
+
+# CORS headers
+CORS_ALLOWED_ORIGINS = ['http://192.168.120.149:8000']
+CORS_ALLOW_ALL_ORIGINS = True
