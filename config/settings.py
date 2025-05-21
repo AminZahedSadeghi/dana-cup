@@ -16,6 +16,7 @@ from pathlib import Path
 
 import environ
 from faker import Faker
+from factory import Faker as FactoryFaker
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -50,6 +51,10 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     'core',
     'accounts',
+    'products',
+    'cart',
+    'orders',
+    'adminpanel',
 ]
 
 THIRD_PARTY_APPS = [
@@ -66,6 +71,7 @@ THIRD_PARTY_APPS = [
     'orderable',
     'corsheaders',
     'taggit',
+    'colorfield',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
@@ -184,3 +190,6 @@ AUTHENTICATION_BACKENDS = [
 # CORS headers
 CORS_ALLOWED_ORIGINS = ['http://192.168.120.149:8000']
 CORS_ALLOW_ALL_ORIGINS = True
+
+# factory-boy config
+FactoryFaker._DEFAULT_LOCALE = 'fa_IR'

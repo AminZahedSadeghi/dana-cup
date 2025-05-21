@@ -1,7 +1,10 @@
 # import hmac
 # from datetime import datetime, date
 # from importlib import import_module
-# from typing import Annotated, Literal
+from typing import Annotated
+
+from ninja import Field
+
 #
 # from dateutil.relativedelta import relativedelta
 # from django.conf import settings
@@ -41,11 +44,11 @@
 #     Field(examples=['جمعه، 23 آذر 1403 - ساعت 18:39'])
 # ]
 #
-# SlugType = Annotated[str, Field(pattern=r'^[a-z0-9]+(?:[-_][a-z0-9]+)*$')]
-# UnicodeSlugType = Annotated[
-#     str,
-#     Field(pattern=r'^[\p{L}\p{N}]+(?:[-_][\p{L}\p{N}]+)*$')
-# ]
+SlugType = Annotated[str, Field(pattern=r'^[a-z0-9]+(?:[-_][a-z0-9]+)*$')]
+UnicodeSlugType = Annotated[
+    str,
+    Field(pattern=r'^[\p{L}\p{N}]+(?:[-_][\p{L}\p{N}]+)*$')
+]
 #
 # TaggitList = Annotated[
 #     list[str],

@@ -4,7 +4,7 @@ from core.utils.common import create_exception_schema
 
 
 class UsernameAlreadyExists(APIException):
-    default_detail = "username already exists"
+    default_detail = "حساب کاربری با این مشخصات از قبل ثبت شده است !"
     status_code = status.HTTP_406_NOT_ACCEPTABLE
 
 
